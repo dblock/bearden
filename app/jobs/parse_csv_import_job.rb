@@ -28,6 +28,13 @@ class ParseCsvImportJob < ApplicationJob
   def create_raw_inputs
     CSV.parse(@data, headers: true) do |row|
       RawInput.create data: row.to_h, import_id: @import_id
+
+      url = row['website']
+
+      # protocol must be added sooner!!
+      if url && !FetchedWebsite.exists?(url: url)
+        FetchedWebsite.create url: url
+      end
     end
   end
 end

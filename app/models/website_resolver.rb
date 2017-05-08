@@ -23,11 +23,9 @@ class WebsiteResolver
   private
 
   def resolve_url
+    # we have to do this because our url is straight from the RawInput
     add_protocol unless protocol?
-    response = connection.get(@url)
-    add_result(response.env)
-  rescue Faraday::Error
-    @results = []
+    find_fetched(@url)
   end
 
   def protocol?
@@ -38,22 +36,15 @@ class WebsiteResolver
     @url = "http://#{@url}"
   end
 
-  def connection
-    redirect_options = { callback: method(:callback) }
-
-    @connection ||= Faraday.new do |faraday|
-      faraday.use FaradayMiddleware::FollowRedirects, redirect_options
-      faraday.headers['Accept-Encoding'] = 'none'
-      faraday.adapter Faraday.default_adapter
-    end
+  def find_fetched(url)
+    # what should happen when fetched is nil!
+    fetched = FetchedWebsite.find_by url: url
+    add_result(fetched)
+    find_fetched(fetched.redirects_to) if fetched.redirects?
   end
 
-  def callback(old, _)
-    add_result(old)
-  end
-
-  def add_result(faraday_env)
-    result = { status: faraday_env[:status], content: faraday_env[:url].to_s }
+  def add_result(fetched_website)
+    result = { status: fetched_website.status, content: fetched_website.url }
     @results << result
   end
 end
