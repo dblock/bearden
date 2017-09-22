@@ -5,7 +5,7 @@ class ApiController < ApplicationController
   private
 
   def ensure_jwt
-    render plain: 'auth is wrong', status: :unauthorized unless token_match?
+    render plain: 'Access Denied', status: :unauthorized unless token_match?
   end
 
   def token_match?

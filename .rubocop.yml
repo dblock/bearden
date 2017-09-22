@@ -35,5 +35,4 @@ Style/BracesAroundHashParameters:
 Rails/ReversibleMigration:
   Enabled: false
 
-Metrics/LineLength:
-  Max: 105
+inherit_from: .rubocop_todo.yml

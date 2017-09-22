@@ -26,6 +26,8 @@ gem 'jwt'
 gem 'micromachine'
 gem 'paper_trail'
 gem 'paper_trail-globalid'
+gem 'responders'
+gem 'roar-rails'
 gem 'sass-rails'
 gem 'sentry-raven'
 gem 'sequel'
@@ -40,6 +42,7 @@ end
 
 group :development, :test do
   gem 'dotenv-rails'
+  gem 'hyperclient'
   gem 'pry-rails'
   gem 'rspec-rails'
   gem 'rubocop'
@@ -57,5 +60,6 @@ group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'fabrication'
+  gem 'timecop'
   gem 'webmock'
 end

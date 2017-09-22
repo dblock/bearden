@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
-# rubocop:disable Metrics/LineLength, Rails/Exit
-
 require 'english'
 require 'rubocop'
 
