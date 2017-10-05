@@ -1,5 +1,4 @@
 class CsvConverter
-  # rubocop:disable Metrics/MethodLength
   def self.headers
     %w[
       bearden_id
@@ -18,7 +17,6 @@ class CsvConverter
       sources
     ]
   end
-  # rubocop:enable Metrics/MethodLength
 
   def self.convert(input)
     new(input).convert
@@ -28,7 +26,6 @@ class CsvConverter
     @input = input
   end
 
-  # rubocop:disable Metrics/MethodLength
   def convert
     [
       @input[:bearden_id],
@@ -47,5 +44,4 @@ class CsvConverter
       @input[:sources]
     ]
   end
-  # rubocop:enable Metrics/MethodLength
 end

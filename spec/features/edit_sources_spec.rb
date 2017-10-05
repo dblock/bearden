@@ -14,10 +14,8 @@ feature 'Edit Source' do
 
       allow_any_instance_of(AdminController)
         .to receive(:decode_user).and_return(
-          {
-            uid: 'foo',
-            roles: %w[admin foo]
-          }
+          uid: 'foo',
+          roles: %w[admin foo]
         )
 
       visit '/sources'
@@ -27,10 +25,8 @@ feature 'Edit Source' do
     scenario 'the options do not include "Add to end"' do
       allow_any_instance_of(AdminController)
         .to receive(:decode_user).and_return(
-          {
-            uid: 'foo',
-            roles: %w[admin foo]
-          }
+          uid: 'foo',
+          roles: %w[admin foo]
         )
 
       source_a = Fabricate(
@@ -51,10 +47,8 @@ feature 'Edit Source' do
     scenario 'Admins can rank a source to last' do
       allow_any_instance_of(AdminController)
         .to receive(:decode_user).and_return(
-          {
-            uid: 'foo',
-            roles: %w[admin foo]
-          }
+          uid: 'foo',
+          roles: %w[admin foo]
         )
 
       source_a = Fabricate(

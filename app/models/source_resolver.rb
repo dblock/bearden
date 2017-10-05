@@ -38,7 +38,7 @@ class SourceResolver
 
   def move_sources_up(rank_type)
     sources_to_decrement(rank_type).each do |source|
-      source.decrement!(rank_type) # rubocop:disable Rails/SkipsModelValidations
+      source.decrement!(rank_type)
     end
   end
 
@@ -49,7 +49,7 @@ class SourceResolver
 
   def move_sources_down(rank_type)
     sources_to_increment(rank_type).each do |source|
-      source.increment!(rank_type) # rubocop:disable Rails/SkipsModelValidations
+      source.increment!(rank_type)
     end
   end
 

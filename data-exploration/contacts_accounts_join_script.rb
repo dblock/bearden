@@ -1,5 +1,3 @@
-# rubocop:disable all
-
 # This file is seen as a one-off export. It's purpose is to take data from one CSV and combine it with data from the Burden database. Given its ephemeral nature, there are certain quirks that weren't dealt with. For instance, the script is run in a Burden `gris console` using the `load` command. To be in a Burden console, you must of course be in the Burden directory. Hence the hard-linked files below.
 
 input_file = '/Users/lancew/Code/bearden/data-exploration/sources/contacts_accounts.csv'
@@ -27,15 +25,15 @@ white_list_source_headers = [
   'Burden Organization Score'
 ]
 
-expanded_score_headers = [
-  'locations_count',
-  'fair_participations_count',
-  'fair_participation_tiers_mean',
-  'artists_inquiry_requests_count',
-  'artists_purchases_count',
-  'artists_purchases_total',
-  'artists_artwork_bidders_count',
-  'artists_auction_lots_price_realized_average'
+expanded_score_headers = %w[
+  locations_count
+  fair_participations_count
+  fair_participation_tiers_mean
+  artists_inquiry_requests_count
+  artists_purchases_count
+  artists_purchases_total
+  artists_artwork_bidders_count
+  artists_auction_lots_price_realized_average
 ]
 
 class ExpandedScoreFields
@@ -115,7 +113,7 @@ class ExpandedScoreFields
 end
 
 CSV.open(output_file, 'wb', headers: white_list_source_headers + expanded_score_headers, write_headers: true) do |output_csv|
-  CSV.foreach(input_file, headers: true, encoding: "iso-8859-1:UTF-8") do |row|
+  CSV.foreach(input_file, headers: true, encoding: 'iso-8859-1:UTF-8') do |row|
     burden_id = row['Burden Organization ID']
     next if burden_id == '' || ids.include?(burden_id)
     organization = Organization.find_by id: burden_id

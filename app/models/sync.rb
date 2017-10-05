@@ -36,7 +36,7 @@ class Sync < ApplicationRecord
   end
 
   def increment_uploaded_parts
-    increment! :uploaded_parts # rubocop:disable Rails/SkipsModelValidations
+    increment! :uploaded_parts
   end
 
   def export_folder

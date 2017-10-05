@@ -1,5 +1,3 @@
-# rubocop:disable all
-
 require_relative './burden_csv'
 
 # Use a CSV with Burden IDs to create a new CSV with complementary data from Burden
@@ -40,5 +38,4 @@ class EnrichOutsourcerCSV
     file_name = path.pop
     (path << "burden-complement-#{file_name}").join('/')
   end
-
 end

@@ -142,11 +142,9 @@ describe RawInputChanges do
           end
           expect(raw_input.exception).to eq 'RawInputChanges::InvalidData'
           expect(raw_input.error_details).to eq(
-            {
-              'email' => { 'content' => [{ 'error' => 'invalid', 'value' => 'infoexample.com' }] }, # rubocop:disable Metrics/LineLength
-              'organization_type' => { 'type' => [{ 'error' => 'blank' }] },
-              'tags' => 'all tags could not be applied: invalid'
-            }
+            'email' => { 'content' => [{ 'error' => 'invalid', 'value' => 'infoexample.com' }] },
+            'organization_type' => { 'type' => [{ 'error' => 'blank' }] },
+            'tags' => 'all tags could not be applied: invalid'
           )
           expect(raw_input.state).to eq RawInput::ERROR
 
@@ -193,11 +191,9 @@ describe RawInputChanges do
           end
           expect(raw_input.exception).to eq 'RawInputChanges::InvalidData'
           expect(raw_input.error_details).to eq(
-            {
-              'email' => { 'content' => [{ 'error' => 'invalid', 'value' => 'infoexample.com' }] }, # rubocop:disable Metrics/LineLength
-              'location' => { 'content' => [{ 'error' => 'blank' }] },
-              'tags' => 'all tags could not be applied: invalid'
-            }
+            'email' => { 'content' => [{ 'error' => 'invalid', 'value' => 'infoexample.com' }] },
+            'location' => { 'content' => [{ 'error' => 'blank' }] },
+            'tags' => 'all tags could not be applied: invalid'
           )
           expect(raw_input.state).to eq RawInput::ERROR
 
@@ -293,10 +289,8 @@ describe RawInputChanges do
           end
           expect(raw_input.exception).to eq 'RawInputChanges::InvalidData'
           expect(raw_input.error_details).to eq(
-            {
-              'email' => { 'content' => [{ 'error' => 'invalid', 'value' => 'infoexample.com' }] }, # rubocop:disable Metrics/LineLength
-              'tags' => 'all tags could not be applied: invalid'
-            }
+            'email' => { 'content' => [{ 'error' => 'invalid', 'value' => 'infoexample.com' }] },
+            'tags' => 'all tags could not be applied: invalid'
           )
           expect(raw_input.state).to eq RawInput::ERROR
 
@@ -341,11 +335,9 @@ describe RawInputChanges do
           end
           expect(raw_input.exception).to eq 'RawInputChanges::InvalidData'
           expect(raw_input.error_details).to eq(
-            {
-              'email' => { 'content' => [{ 'error' => 'invalid', 'value' => 'infoexample.com' }] }, # rubocop:disable Metrics/LineLength
-              'location' => { 'content' => [{ 'error' => 'blank' }] },
-              'tags' => 'all tags could not be applied: invalid'
-            }
+            'email' => { 'content' => [{ 'error' => 'invalid', 'value' => 'infoexample.com' }] },
+            'location' => { 'content' => [{ 'error' => 'blank' }] },
+            'tags' => 'all tags could not be applied: invalid'
           )
           expect(raw_input.state).to eq RawInput::ERROR
 

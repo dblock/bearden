@@ -1,4 +1,3 @@
-# rubocop:disable Metrics/MethodLength
 class CsvTransformer
   def self.allowed_headers
     %w[

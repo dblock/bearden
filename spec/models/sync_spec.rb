@@ -24,7 +24,7 @@ describe Sync do
         sync.state = 'invalid'
         expect(sync).to_not be_valid
         expect(sync.errors.messages).to eq(
-          { state: ['is not included in the list'] }
+          state: ['is not included in the list']
         )
       end
     end

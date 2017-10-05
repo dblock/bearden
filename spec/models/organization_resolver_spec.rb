@@ -15,12 +15,10 @@ describe OrganizationResolver do
 
         resolved = OrganizationResolver.resolve organization
         expect(resolved).to eq(
-          {
-            bearden_id: organization.id,
-            in_business: organization.in_business,
-            sources: [source.name],
-            tag_names: ''
-          }
+          bearden_id: organization.id,
+          in_business: organization.in_business,
+          sources: [source.name],
+          tag_names: ''
         )
       end
     end
@@ -74,22 +72,20 @@ describe OrganizationResolver do
         resolved = OrganizationResolver.resolve organization
 
         expect(resolved).to eq(
-          {
-            bearden_id: organization.id,
-            city: city,
-            country: country,
-            email: email,
-            in_business: organization.in_business,
-            latitude: latitude,
-            location: location,
-            longitude: longitude,
-            organization_name: organization_name,
-            organization_type: organization_type,
-            phone_number: phone_number,
-            tag_names: tag_names,
-            website: website,
-            sources: [source.name]
-          }
+          bearden_id: organization.id,
+          city: city,
+          country: country,
+          email: email,
+          in_business: organization.in_business,
+          latitude: latitude,
+          location: location,
+          longitude: longitude,
+          organization_name: organization_name,
+          organization_type: organization_type,
+          phone_number: phone_number,
+          tag_names: tag_names,
+          website: website,
+          sources: [source.name]
         )
       end
     end
@@ -157,22 +153,20 @@ describe OrganizationResolver do
         resolved = OrganizationResolver.resolve organization
 
         expect(resolved).to eq(
-          {
-            bearden_id: organization.id,
-            city: city,
-            country: country,
-            email: email,
-            in_business: organization.in_business,
-            latitude: latitude,
-            location: location,
-            longitude: longitude,
-            organization_name: organization_name,
-            organization_type: organization_type,
-            phone_number: phone_number,
-            tag_names: [first_tag_name, second_tag_name].join(','),
-            website: website,
-            sources: [source.name]
-          }
+          bearden_id: organization.id,
+          city: city,
+          country: country,
+          email: email,
+          in_business: organization.in_business,
+          latitude: latitude,
+          location: location,
+          longitude: longitude,
+          organization_name: organization_name,
+          organization_type: organization_type,
+          phone_number: phone_number,
+          tag_names: [first_tag_name, second_tag_name].join(','),
+          website: website,
+          sources: [source.name]
         )
       end
     end
@@ -258,22 +252,20 @@ describe OrganizationResolver do
         resolved = OrganizationResolver.resolve organization
 
         expect(resolved).to eq(
-          {
-            bearden_id: organization.id,
-            city: city,
-            country: country,
-            email: email,
-            in_business: organization.in_business,
-            latitude: latitude,
-            location: location,
-            longitude: longitude,
-            organization_name: organization_name,
-            organization_type: organization_type,
-            phone_number: phone_number,
-            tag_names: [first_tag_name, second_tag_name].join(','),
-            website: website,
-            sources: Source.all.map(&:name)
-          }
+          bearden_id: organization.id,
+          city: city,
+          country: country,
+          email: email,
+          in_business: organization.in_business,
+          latitude: latitude,
+          location: location,
+          longitude: longitude,
+          organization_name: organization_name,
+          organization_type: organization_type,
+          phone_number: phone_number,
+          tag_names: [first_tag_name, second_tag_name].join(','),
+          website: website,
+          sources: Source.all.map(&:name)
         )
       end
     end

@@ -1,39 +1,10 @@
-AllCops:
-  Exclude:
-    - 'db/schema.rb'
-    - 'vendor/**/*'
-    - 'lib/tasks/temporary/*.rake'
-
-Style/ClassAndModuleChildren:
-  Exclude:
-    - 'app/controllers/api/**/*'
-
-Metrics/AbcSize:
-  Exclude:
-    - 'db/migrate/*'
-
-Metrics/BlockLength:
-  Exclude:
-    - 'spec/**/*'
-    - 'lib/tasks/*.rake'
-    - 'docs/tasks/*.rake'
-
-Metrics/MethodLength:
-  Exclude:
-    - 'db/migrate/*'
-
 Style/Documentation:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Style/BracesAroundHashParameters:
-  Exclude:
-    - 'spec/**/*'
-
-Rails/ReversibleMigration:
+Metrics/LineLength:
   Enabled: false
 
-Metrics/LineLength:
-  Max: 105
+inherit_from: .rubocop_todo.yml

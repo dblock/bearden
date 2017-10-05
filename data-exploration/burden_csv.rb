@@ -1,5 +1,3 @@
-# rubocop:disable all
-
 class Record
   def self.create(record)
     new(record).create
@@ -22,7 +20,6 @@ class Record
     }
   end
 end
-
 
 class BurdenCSV
   def self.export_row(query:, location:, write_headers:, id:)

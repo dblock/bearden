@@ -29,7 +29,6 @@ class OrganizationResolver
     rankables.order(created_at: :desc).sort_by(&:rank).first
   end
 
-  # rubocop:disable Metrics/MethodLength, Metrics/AbcSize
   def highest_ranked_data
     {
       bearden_id: @organization.id,
@@ -48,7 +47,6 @@ class OrganizationResolver
       sources: truncated(source_names)
     }.compact
   end
-  # rubocop:enable Metrics/MethodLength, Metrics/AbcSize
 
   def organization_tag_names
     @organization&.tags || []

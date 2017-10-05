@@ -8,7 +8,7 @@ describe Import do
         import.state = 'invalid'
         expect(import).to_not be_valid
         expect(import.errors.messages).to eq(
-          { state: ['is not included in the list'] }
+          state: ['is not included in the list']
         )
       end
     end
